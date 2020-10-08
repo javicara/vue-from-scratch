@@ -1,12 +1,12 @@
 Vue.component('vmodel', {
     data () {
         return {
-          framework: 'Vuejs 2'
+          framework: ''
         }     
     },
     template: `
       <div>
-        <h2>Trabajando con vmodel</h2>
+        <h2>Trabajando con vmodelss</h2>
         <input v-model="framework" v-focus />
         <p>El framework escogido es: {{ framework }}</p>
       </div>

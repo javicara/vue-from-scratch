@@ -2,7 +2,7 @@ Vue.component('methods', {
   data () {
     return {
       name: 'Juancho',
-      surname: 'tita'
+      surname: 'titaccc'
     }
   },
   computed: {
