@@ -1,8 +1,8 @@
 Vue.component('methods', {
   data () {
     return {
-      name: 'Israel',
-      surname: 'Parra'
+      name: 'Juancho',
+      surname: 'tita'
     }
   },
   computed: {
