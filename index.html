@@ -10,7 +10,10 @@
     <script src="components/methods.js"></script>
     <script src="components/vmodel.js"></script>
     <script src="components/vmodel-checkboxes.js"></script>
-
+    <script src="components/emit.js"></script>
+    <script src="components/parent-data.js"></script>
+    <script src="components/child-data.js"></script>
+    
 
 </head>
   <body>
@@ -20,13 +23,36 @@
         <methods></methods>
         <vmodel></vmodel>
         <vmodel-checkboxes></vmodel-checkboxes>
-    </div>    
+        <emit @showbrand="showCarBrandFromEmitCmp($event)"></emit>
+        <parent-data></parent-data>
+        <child-data ref="childData"></child-data>
+
+      </div>    
+
       <script>
         new Vue({
           el: "#app",
-         
+          mounted() {
+            const cmpName=this.$refs.childData.cmpName;
+            const ram=this.$refs.childData.ram;
 
-        });
+            console.log('ram', ram , '  name',cmpName );
+          },
+          data() {
+            return {
+              appName:'Inicando el mundo de Vuejs 2'
+            }
+          },
+          methods: {
+            showCarBrandFromEmitCmp (carBrand){
+              
+              alert(carBrand)
+
+          }
+         }
+
+
+        })
       </script>
     
   </body>

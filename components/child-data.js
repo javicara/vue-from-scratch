@@ -1,8 +1,9 @@
 Vue.component('child-data', {
     data () {
         return {
-            cmpName: 'Child Data CMP'
-        }  
+            cmpName: 'Child Data CMP ',
+            ram:8
+          }  
     },
     template: `
       <div>
