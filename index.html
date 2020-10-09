@@ -13,7 +13,8 @@
     <script src="components/emit.js"></script>
     <script src="components/parent-data.js"></script>
     <script src="components/child-data.js"></script>
-    
+    <script src="components/child-methods.js"></script>
+
 
 </head>
   <body>
@@ -26,7 +27,7 @@
         <emit @showbrand="showCarBrandFromEmitCmp($event)"></emit>
         <parent-data></parent-data>
         <child-data ref="childData"></child-data>
-
+        <child-methods ref="childMethods"></child-methods>
       </div>    
 
       <script>
@@ -35,8 +36,13 @@
           mounted() {
             const cmpName=this.$refs.childData.cmpName;
             const ram=this.$refs.childData.ram;
+            
+            console.log('ram', ram , '  nam dev' );
 
-            console.log('ram', ram , '  nam dev',cmpName );
+            setTimeout(()=>{
+              this.$refs.childMethods.showCmpName();
+            },3000);
+
           },
           data() {
             return {
