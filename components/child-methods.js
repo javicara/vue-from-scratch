@@ -1,13 +1,13 @@
 Vue.component('child-methods', {
     data () {
         return {
-            cmpName: 'Child Methods CMP'
+            cmpName: 'Mostrando desde un metodo de un componente hijo'
         }  
     },
     methods: {
-        showCmpName () {
-            console.log("Llamada al método showCmpName", this.cmpName)
-        }
+       showCmpName(){
+           console.log("Llamada el metodos CMP name",this.cmpName)
+       }
     },
     template: `
       <div>

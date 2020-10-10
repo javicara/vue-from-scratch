@@ -13,11 +13,15 @@
     <script src="components/emit.js"></script>
     <script src="components/parent-data.js"></script>
     <script src="components/child-data.js"></script>
-    
+    <script src="components/child-methods.js"></script>
+    <script src="components/login-form.js"></script>
+    <script src="components/loops.js"></script>
+
+
 
 </head>
   <body>
-    <div id="app">
+    <div id="app" style="margin-bottom: 100px">
       <message></message>
       <computed-properties></computed-properties>
         <methods></methods>
@@ -26,7 +30,9 @@
         <emit @showbrand="showCarBrandFromEmitCmp($event)"></emit>
         <parent-data></parent-data>
         <child-data ref="childData"></child-data>
-
+        <child-methods ref="childMethods"></child-methods>
+        <login-form></login-form>
+        <loops></loops>
       </div>    
 
       <script>
@@ -35,8 +41,13 @@
           mounted() {
             const cmpName=this.$refs.childData.cmpName;
             const ram=this.$refs.childData.ram;
+            
+            console.log('ram', ram , '  nam dev' );
 
-            console.log('ram', ram , '  name',cmpName );
+            setTimeout(()=>{
+              this.$refs.childMethods.showCmpName();
+            },3000);
+
           },
           data() {
             return {
