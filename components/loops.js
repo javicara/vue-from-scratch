@@ -13,11 +13,11 @@ Vue.component('loops', {
     },
   template: `
     <div>
-        <h2>Bucles con v-for</h2>
+        <h2>BUCLES con v-for</h2>
         <ul v-if="frameworks.length">
-            <li v-for="(framework, index) in frameworks" :key="framework.id">
-                ({{ index }}) | {{ framework.name }}
-            </li>
+          <li v-for="(framework, index) in frameworks" :key="framework.id">
+            ({{index+1}}) | {{framework.name}}
+          </li>
         </ul>
     </div>
   `
