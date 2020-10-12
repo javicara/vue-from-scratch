@@ -1,7 +1,7 @@
 Vue.component("vmodel", {
   data() {
     return {
-      framework: "",
+      framework: "123",
     };
   },
   template: `
