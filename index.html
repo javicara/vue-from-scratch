@@ -7,6 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="directives/focus.js"></script>
     <script src="directives/change-styles.js"></script>
+    <script src="filters/currency-filter.js"></script>
+    <script src="plugins/aboutMe.js"></script>
 
     <script src="components/message.js"></script>
     <script src="components/computed-properties.js"></script>
@@ -56,7 +58,7 @@
         </template>
       </slots>
       <watchers></watchers>
-      <dolar ref="dolar"></dolar>
+      <!-- <dolar ref="dolar"></dolar> -->
       <computed-properties-get-set></computed-properties-get-set>
 
       <load-dynamic-components></load-dynamic-components>
@@ -75,6 +77,8 @@
           setTimeout(() => {
             this.$refs.childMethods.showCmpName();
           }, 300000);
+
+          console.log(this.$me("Javier", 23));
         },
         data() {
           return {
