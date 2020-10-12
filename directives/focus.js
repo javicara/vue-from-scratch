@@ -1,5 +1,5 @@
-Vue.directive('focus', {
-    inserted (el) {
-      el.focus();
-    }
+Vue.directive("focus", {
+  inserted(el) {
+    el.focus();
+  },
 });

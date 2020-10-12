@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vuejs 2</title>
+    <script src="directives/focus.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="components/message.js"></script>
     <script src="components/computed-properties.js"></script>
@@ -21,78 +22,67 @@
     <script src="components/login-form.js"></script>
     <script src="components/loops.js"></script>
     <script src="components/computed-properties-get-set.js"></script>
-    
+
     <script src="components/dynamic-components/cmp1.js"></script>
     <script src="components/dynamic-components/cmp2.js"></script>
     <script src="components/dynamic-components/cmp3.js"></script>
     <script src="components/load-dynamic-components.js"></script>
-
-
-
-
-</head>
+  </head>
   <body>
     <div id="app" style="margin-bottom: 100px">
       <message></message>
       <computed-properties></computed-properties>
-        <methods></methods>
-        <vmodel></vmodel>
-        <vmodel-checkboxes></vmodel-checkboxes>
-        <emit @showbrand="showCarBrandFromEmitCmp($event)"></emit>
-        <parent-data></parent-data>
-        <child-data ref="childData"></child-data>
-        <child-methods ref="childMethods"></child-methods>
-        <login-form></login-form>
-        <loops></loops>
-        <conditionals></conditionals>
-        <slots>
-          <template slot="header">
-              <h3>Header del layout con Slots</h3>
-          </template>
-          <p>Contenido del slot para el cuerpo</p>
-          <template slot="footer">
-              <p>Footer del layout con Slots</p>
-          </template>
+      <methods></methods>
+      <vmodel></vmodel>
+      <vmodel-checkboxes></vmodel-checkboxes>
+      <emit @showbrand="showCarBrandFromEmitCmp($event)"></emit>
+      <parent-data></parent-data>
+      <child-data ref="childData"></child-data>
+      <child-methods ref="childMethods"></child-methods>
+      <login-form></login-form>
+      <loops></loops>
+      <conditionals></conditionals>
+      <slots>
+        <template slot="header">
+          <h3>Header del layout con Slots</h3>
+        </template>
+        <p>Contenido del slot para el cuerpo</p>
+        <template slot="footer">
+          <p>Footer del layout con Slots</p>
+        </template>
       </slots>
       <watchers></watchers>
-        <dolar ref="dolar"></dolar>
-        <computed-properties-get-set></computed-properties-get-set>
-       
-        <load-dynamic-components></load-dynamic-components>
-    
-      </div>    
+      <dolar ref="dolar"></dolar>
+      <computed-properties-get-set></computed-properties-get-set>
 
-      <script>
-        new Vue({
-          el: "#app",
-          mounted() {
-            const cmpName=this.$refs.childData.cmpName;
-            const ram=this.$refs.childData.ram;
-            
-            console.log('ram', ram , '  nam dev' );
-            const blue=this.$refs.dolar.calcularValor();
-            console.log(blue);
-            setTimeout(()=>{
-              this.$refs.childMethods.showCmpName();
-            },300000);
+      <load-dynamic-components></load-dynamic-components>
+    </div>
 
+    <script>
+      new Vue({
+        el: "#app",
+        mounted() {
+          const cmpName = this.$refs.childData.cmpName;
+          const ram = this.$refs.childData.ram;
+
+          console.log("ram", ram, "  nam dev");
+          const blue = this.$refs.dolar.calcularValor();
+          console.log(blue);
+          setTimeout(() => {
+            this.$refs.childMethods.showCmpName();
+          }, 300000);
+        },
+        data() {
+          return {
+            appName: "Inicando el mundo de Vuejs 2",
+          };
+        },
+        methods: {
+          showCarBrandFromEmitCmp(carBrand) {
+            alert(carBrand);
           },
-          data() {
-            return {
-              appName:'Inicando el mundo de Vuejs 2'
-            }
-          },
-          methods: {
-            showCarBrandFromEmitCmp (carBrand){
-              
-              alert(carBrand)
-
-          }
-         }
-
-
-        })
-      </script>
-    
+        },
+      });
+    </script>
   </body>
 </html>
