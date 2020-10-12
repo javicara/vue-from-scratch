@@ -7,7 +7,7 @@ Vue.component('computed-properties-get-set', {
     computed: {
       amountFormatted: {
         get () {
-          return `${this.amount}`;
+          return `U$D ${this.amount}`;
         },
         set (newValue) {
           this.amount = newValue;
