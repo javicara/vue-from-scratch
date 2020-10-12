@@ -1,24 +1,24 @@
-Vue.component('computed-properties-get-set', {
-    data () {
-      return {
-        amount: 0
-      }
+Vue.component("computed-properties-get-set", {
+  data() {
+    return {
+      amount: 0,
+    };
+  },
+  computed: {
+    amountFormatted: {
+      get() {
+        return `U$D ${this.amount}`;
+      },
+      set(newValue) {
+        this.amount = newValue;
+      },
     },
-    computed: {
-      amountFormatted: {
-        get () {
-          return `U$D ${this.amount}`;
-        },
-        set (newValue) {
-          this.amount = newValue;
-        }
-      }
-    },
-    template: `
+  },
+  template: `
       <div>
         <h2>Computed properties get && set</h2>
         <input v-model="amount" />
         <p>{{ amountFormatted | currency_filter('$') }}</p>
       </div>
-    `
+    `,
 });
